@@ -1,4 +1,4 @@
-from readers.reader_strategy import ReaderStrategy
+from reader.reader_strategy import ReaderStrategy
 import pandas as pd
 
 
