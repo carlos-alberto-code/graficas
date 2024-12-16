@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class GraficaStrategy(ABC):
+class ChartStrategy(ABC):
     def __init__(self, estrategia_de_archivo) -> None:
         super().__init__()
 

@@ -1,6 +1,6 @@
-from charts.grafica import GraficaStrategy
+from charts.chart_strategy import ChartStrategy
 
 
-class GraficaBarras(GraficaStrategy):
+class GraficaBarras(ChartStrategy):
     def graficar(self, datos):
         print("Grafica de barras con datos: ", datos)
