@@ -1,13 +1,14 @@
 import flet as ft
 from reader import DataReader
-from table import Table
+from table import Table, create_rows
 
 
-def main(page: ft.Page):
-    page.theme_mode = ft.ThemeMode.LIGHT
-    
-    reader = DataReader("archivos/sales_data.csv")
-    table = Table(reader)
-    page.add(table)
+reader = DataReader("archivos/sales_data.csv")
+create_rows(reader)
+# def main(page: ft.Page):
+#     page.theme_mode = ft.ThemeMode.LIGHT
 
-ft.app(target=main)
+#     table = Table(reader)
+#     page.add(table)
+
+# ft.app(target=main)
