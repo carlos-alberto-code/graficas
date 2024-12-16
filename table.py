@@ -2,13 +2,22 @@ import flet as ft
 from reader import DataReader
 
 
+def create_columns(reader: DataReader) -> list[ft.DataColumn]:
+     columns = [col for col in reader.data.columns]
+     return [
+          ft.DataColumn(
+               label=ft.Text(value=col_name),
+               on_sort=lambda e: print(f"Ordenar por {e.control.label.value}")
+          )
+          for col_name in columns
+     ]
+
+
 class Table(ft.DataTable):
     def __init__(self, reader: DataReader) -> None:
         self._data = reader.data
         super().__init__(
-             columns=[
-                  ft.DataColumn(label=ft.Text(value=col_name)) for col_name in self._data.columns
-             ],
+             columns=create_columns(reader),
              rows=[
                   ft.DataRow(
                        cells=[
@@ -19,3 +28,5 @@ class Table(ft.DataTable):
                   ) for i in range(len(self._data))
              ]
         )
+
+
