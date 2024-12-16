@@ -1,5 +1,5 @@
-from reader.reader_strategy import ReaderStrategy
 import pandas as pd
+from reader.reader_strategy import ReaderStrategy
 
 
 class DatabaseReader(ReaderStrategy):
